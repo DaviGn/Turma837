@@ -3,13 +3,13 @@ import http from 'http';
 const server = http.createServer((req, res) => {
   const { url, method } = req;
 
-  if (url === '/products' && method === 'GET') {
-    return res.end('[]');
+  if (method === 'GET') {
+    return res.end('[listadeProdutos]');
   }
 
-  // if (url === '/products' && method === 'POST') {
-  //   return res.end('Criado');
-  // }
+  if (method === 'POST') {
+    return res.end('Criado');
+  }
 
   return res.end('Ok');
 });
